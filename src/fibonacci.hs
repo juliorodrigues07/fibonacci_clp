@@ -3,12 +3,11 @@
 fibonacci :: Int -> Int
 fibonacci_aux :: Int -> Int -> Int -> Int
 
--- Atribui parâmetros padrão do caso base (1º e 2º elemento da sequência)
-fibonacci n = fibonacci_aux n 1 1
+-- Atribui parâmetros padrão do caso base (Dois números iniciais)
+fibonacci n = fibonacci_aux n 0 1
     
 fibonacci_aux n a b
-    | n == 1 = a 
-    | n == 2 = b
+    | n == 1 = b
     | otherwise = fibonacci_aux (n - 1) b (a + b)
     
 main :: IO ()
