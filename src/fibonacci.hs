@@ -3,7 +3,7 @@
 fibonacci :: Int -> Int
 fibonacci_aux :: Int -> Int -> Int -> Int
 
--- Atribui parâmetros padrão do caso base (Dois números iniciais)
+-- Atribui parâmetros padrão do caso base (Dois valores iniciais)
 fibonacci n = fibonacci_aux n 0 1
     
 fibonacci_aux n a b
