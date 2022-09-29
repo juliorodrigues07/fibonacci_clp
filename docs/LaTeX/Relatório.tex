@@ -107,7 +107,7 @@ Posteriormente, foi aplicada uma etapa de refatoração nas soluções. A princi
 
 Todas as três implementações foram adaptadas, introduzindo recursões em cauda, ou seja, agora a chamada recursiva é a última operação à ser realizada pela função. Isto elimina a necessidade de guardar informações referentes às chamadas anteriores da função na recursão, culminando em menor utilização da memória durante o processo de empilhamento (aliviando a \emph{stack}).
 
-Com isto em mente, a mesma ideia foi aplicada utilizando os três paradigmas de programação. A partir do caso base (0 e 1) que vamos denominar agora como \((a)\) e \((b)\), é chamada a função de forma recursiva de acordo com o termo desejado \(N\) vezes, ou seja, a complexidade referente ao número de chamadas recursivas é relacionada diretamente com a magnitude do termo desejado da sequência ($\mathcal{O}(n)$). 
+Com isto em mente, a mesma ideia foi aplicada utilizando os três paradigmas de programação. A partir do caso base (0 e 1) que vamos denominar agora como \((a)\) e \((b)\), é chamada a função de forma recursiva de acordo com o termo desejado \(N - 1\) vezes, ou seja, a complexidade referente ao número de chamadas recursivas é relacionada diretamente com a magnitude do termo desejado da sequência ($\mathcal{O}(n)$). 
 
 A chamada recursiva sempre é a última instrução executada pela função, decrementando \(N\) em uma unidade e incrementando \((a)\) e \((b)\) gradualmente. O modelo da declaração da função e da chamada recursiva são exibidos à seguir:
 
@@ -128,7 +128,7 @@ Conforme citado anteriomente, a implementação da solução foi realizada utili
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.95\textwidth]{Images/python.png}
+    \includegraphics[width=1\textwidth]{Images/python.png}
     \caption{Implementação com Paradigma Imperativo (\emph{Python})}
     \label{fig:exampleFig1}
 \end{figure}
