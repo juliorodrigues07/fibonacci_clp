@@ -9,4 +9,4 @@ fibonacci_tail(N, A, B, Result) :-
    N1 is N - 1,
    fibonacci_tail(N1, B, New_B, Result).
     
-% Consulta ---> fibonacci(6, R).
+% Consulta ---> time(fibonacci(6, R)).

@@ -1,5 +1,6 @@
--- Retorna o n-ésimo termo da sequência de Fibonacci
+import System.TimeIt
 
+-- Retorna o n-ésimo termo da sequência de Fibonacci
 fibonacci :: Int -> Int
 fibonacci_aux :: Int -> Int -> Int -> Int
 
@@ -9,8 +10,9 @@ fibonacci n = fibonacci_aux n 0 1
 fibonacci_aux n a b
     | n == 1 = b
     | otherwise = fibonacci_aux (n - 1) b (a + b)
-    
+
+-- Consultas
 main :: IO ()
 main =  do
-    print(fibonacci 6)
-    print(fibonacci 8)
+    timeIt $ putStrLn ("Result: " ++ show (fibonacci 92))
+    
