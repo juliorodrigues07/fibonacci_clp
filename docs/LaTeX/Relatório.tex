@@ -149,7 +149,27 @@ Conforme citado anteriomente, a implementação da solução foi realizada utili
 
 \subsection{Análise}
 
-Embora todas as implementações tenham gerado código enxuto (problema de simples solução), os paradigmas distintos, somados a sintaxe distante entre as linguagens contribuíram para a construção de código bastante distinto, mas que possuem a mesma ideia principal de solução em seu núcleo. Na próxima subseção, teremos uma visão mais detalhada sobre as particularidades de cada paradigma e linguagem correspondente.
+Embora todas as implementações tenham gerado código enxuto (problema de simples solução), os paradigmas distintos, somados a sintaxe distante entre as linguagens contribuíram para a construção de código bastante distinto, mas que possuem a mesma ideia principal de solução em seu núcleo. Na próxima subseção, teremos uma visão mais detalhada sobre as particularidades de cada paradigma e linguagem correspondente. 
+
+Mas antes, vamos analisar de forma bastante superficial o desempenho de cada implementação em cada paradigma de linguagem, utilizando como métrica básica o tempo de execução. Para evitar viés em relação à execução em máquinas locais, todas as implementações foram testadas em \emph{IDEs} online: \hyperlink{https://colab.research.google.com/}{Google Colab} (\emph{Python}), \hyperlink{https://swish.swi-prolog.org/}{SWISH} (\emph{Prolog}) e \hyperlink{https://www.codingrooms.com/}{Coding Rooms} (\emph{Haskell}).
+
+Na implementação inicial, ou seja, utilizando a recursão comum, todos os \emph{IDEs} encontraram problemas na execução, principalmente no caso da linguagem \emph{Prolog}, cujos avisos de "estouro" de pilha (0.2 GB) começaram a se apresentar com termos da sequência de \emph{Fibonacci} posteriores ao vigésimo, além do aumento exponencial no tempo de execução observado. Por isto, foi mantido o limite de \(N\) em 20 para executar os programas, obtendo resultados que são sumarizados na Figura \ref{fig:exampleFig4}:
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\textwidth]{Images/normal.png}
+    \caption{Tempos de execução na recursão normal}
+    \label{fig:exampleFig4}
+\end{figure}
+
+Na versão aprimorada da solução, ou seja, com a utilização da recursão em cauda, os resultados obtidos foram consideravelmente melhores, embora uma limitação presente na \emph{IDE} para \emph{Haskell} tenha prejudicado os testes com termos de grande magnitude. Os maiores valores representáveis (\emph{maxBound}) são da ordem de \(2^{63}\), o que corresponde à no máximo o 92º termo da sequência de \emph{Fibonacci}, o que limitou os testes com \(N\) até este valor. Por isto, os resultados obtidos não são muito representativos (Figura \ref{fig:exampleFig5}), embora mostrem claramente que a recursão em cauda tem grande impacto no tempo de execução do algoritmo.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\textwidth]{Images/tail.png}
+    \caption{Tempos de execução na recursão em cauda}
+    \label{fig:exampleFig5}
+\end{figure}
 
 \subsection{Vantagens e Desvantagens}
 
