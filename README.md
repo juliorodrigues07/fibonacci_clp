@@ -7,12 +7,22 @@ Utilização de linguagens com paradigmas de programação distintos para soluç
 
 Os _scripts_ podem ser testados em _IDEs_ online como:
 
+- [Coding Rooms](https://www.codingrooms.com/);
+
 - [JDoodle Haskell](https://www.jdoodle.com/execute-haskell-online/);
 
 - [JDoodle Prolog](https://www.jdoodle.com/execute-prolog-online/);
+
+- [SWISH](https://swish.swi-prolog.org/);
 
 - [Google Colab](https://colab.research.google.com/).
 
 O _script_ _Python_ (.py) também pode ser executado via terminal com o seguinte comando:
 
       python3 fibonacci.py
+      
+O _script_ _Haskell_ (.hs) também pode ser compilado e executado via terminal com os seguintes comandos:
+
+      ghc -o main fibonacci.hs TimeIt.hs
+      
+      ./main
